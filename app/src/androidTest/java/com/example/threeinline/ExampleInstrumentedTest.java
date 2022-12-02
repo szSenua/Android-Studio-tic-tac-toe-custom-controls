@@ -1,4 +1,4 @@
-package com.example.tictactoe;
+package com.example.threeinline;
 
 import android.content.Context;
 

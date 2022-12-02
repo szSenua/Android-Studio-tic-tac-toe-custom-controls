@@ -1,4 +1,4 @@
-package com.example.tictactoe;
+package com.example.threeinline;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,6 +30,8 @@ public class TicTacToe extends View {
     private final Paint pMarcaX;
 
     private onCasillaSeleccionadaListener listener;
+
+
 
 
     public TicTacToe(Context ctx, AttributeSet attrs){
@@ -156,6 +159,72 @@ public class TicTacToe extends View {
                 seleccion.invoke(fila, columna);
             }
         });
+    }
+
+    public int juegoGanado(){
+
+
+        if (tablero[0][0] == 1 && tablero[0][1] == 1 && tablero[0][2] == 1){
+            return 1;
+        }
+
+        else if(tablero[0][0] == 2 && tablero[0][1] == 2 && tablero[0][2] == 2){
+            return 2;
+
+
+
+        }else if(tablero[1][0] == 1 && tablero[1][1] == 1 && tablero[1][2] == 1){
+            return 1;
+
+        } else if(tablero[1][0] == 2 && tablero[1][1] == 2 && tablero[1][2] == 2){
+            return 2;
+
+
+        }else if(tablero[2][0] == 1 && tablero[2][1] == 1 && tablero[2][2] == 1){
+
+            return 1;
+
+        } else if(tablero[2][0] == 2 && tablero[2][1] == 2 && tablero[2][2] == 2){
+            return 2;
+
+
+        }else if(tablero[0][0] == 1 && tablero[1][0] == 1 && tablero[2][0] == 1){
+            return 1;
+
+        } else if(tablero[0][0] == 2 && tablero[1][0] == 2 && tablero[2][0] == 2){
+            return 2;
+
+
+        }else if(tablero[0][1] == 1 && tablero[1][1] == 1 && tablero[2][1] == 1){
+            return 1;
+
+        } else if(tablero[0][1] == 2 && tablero[1][1] == 2 && tablero[2][1] == 2){
+            return 2;
+
+
+        }else if(tablero[0][2] == 1 && tablero[1][2] == 1 && tablero[2][2] == 1){
+            return 1;
+
+        } else if(tablero[0][2] == 2 && tablero[1][2] == 2 && tablero[2][2] == 2){
+            return 2;
+
+
+        }else if(tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1){
+            return 1;
+
+        } else if(tablero[0][0] == 2 && tablero[1][1] == 2 && tablero[2][2] == 2){
+            return 2;
+
+
+        }else if (tablero[2][0] == 1 && tablero[1][1] == 1 && tablero[0][2] == 1){
+            return 1;
+
+        } else if(tablero[2][0] == 2 && tablero[1][1] == 2 && tablero[0][2] == 2){
+            return 2;
+
+
+        }
+        return 3;
     }
 
     public final void setCasilla(int fil, int col, int valor) {
